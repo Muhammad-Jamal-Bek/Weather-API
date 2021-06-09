@@ -1,8 +1,14 @@
-import React, { Component } from "react";
-import Search from "./components/Search";
+import React, { Children, Component } from "react";
 
-import SayHi, { SayHello } from "./components/WeatherItem";
 import fakeWeatherData from "./fakeWeatherData.json";
+import storm from "../src/img/weather-icons/storm.svg";
+import clear from "../src/img/weather-icons/clear.svg";
+import partlycloudy from "../src/img/weather-icons/partlycloudy.svg";
+import Navbar from "./components/Navbar";
+import Weathernow from "./components/Weathernow";
+import Weatherchilds from "./components/Weatherchilds";
+
+
 
 import "./App.css";
 
@@ -10,7 +16,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Muhammad Jamal"
+      name: "Karim"
     };
   }
 
@@ -21,12 +27,12 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <SayHi />
-        <SayHello color="black" name={this.state.name} />
-        <Search handleInput={this.handleInputChange} />
+              <Navbar/>
+              <Weathernow/>
+              <Weatherchilds/>
       </div>
     );
   }
-}
+} 
 
 export default App;
